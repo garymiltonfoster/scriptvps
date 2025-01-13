@@ -23,6 +23,19 @@
             border-radius: 5px;
             display: block;
             margin: 10px 0;
+            position: relative;
+        }
+        .copy-icon {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 3px 5px;
+            font-size: 12px;
         }
         .note {
             background-color: #d9534f;
@@ -36,13 +49,25 @@
             font-weight: bold;
         }
     </style>
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Đã sao chép lệnh vào clipboard!');
+            }, () => {
+                alert('Không thể sao chép lệnh.');
+            });
+        }
+    </script>
 </head>
 <body>
     <h1>Cài đặt HocVPS Script</h1>
     <p>Đầu tiên các bạn cần chuẩn bị một <span class="highlight">VPS mới tinh</span> bằng cách <i>Reinstall</i> hoặc <i>Rebuild</i>, sử dụng CentOS 6 hoặc CentOS 7, Ubuntu đều được.</p>
     <p>Kết nối SSH sử dụng <span class="highlight">ZOC Terminal</span> hoặc <span class="highlight">Putty</span> với tài khoản <code>root</code>. Nếu tài khoản không có quyền root cần cấp quyền bằng cách chạy lệnh <code>sudo su</code>.</p>
     <p>Chạy lệnh sau để tiến hành cài đặt:</p>
-    <code>curl -sO https://garymiltonfoster.github.io/scriptvps/hocvps.zip && unzip hocvps.zip && cd hocvps-master && chmod +x install && ./install</code>
+    <code>
+        curl -sO https://garymiltonfoster.github.io/scriptvps/hocvps.zip && unzip hocvps.zip && cd hocvps-master && chmod +x install && ./install
+        <button class="copy-icon" onclick="copyToClipboard('curl -sO https://garymiltonfoster.github.io/scriptvps/hocvps.zip && unzip hocvps.zip && cd hocvps-master && chmod +x install && ./install')">Copy</button>
+    </code>
     <div class="note">
         <ul>
             <li>Cài đặt xong, khi connect SSH VPS bạn hãy sử dụng port 2222, không dùng port 22!</li>
