@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cài đặt HocVPS Script</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 5px;
+            display: block;
+            margin: 10px 0;
+        }
+        .note {
+            background-color: #d9534f;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .highlight {
+            color: #d9534f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cài đặt HocVPS Script</h1>
+    <p>Đầu tiên các bạn cần chuẩn bị một <span class="highlight">VPS mới tinh</span> bằng cách <i>Reinstall</i> hoặc <i>Rebuild</i>, sử dụng CentOS 6 hoặc CentOS 7, bản 32bit hoặc 64bit đều được. Nên sử dụng bản <span class="highlight">CentOS 7 x64 với PHP 7.3</span>.</p>
+    <p>Kết nối SSH sử dụng <span class="highlight">ZOC Terminal</span> hoặc <span class="highlight">Putty</span> với tài khoản <code>root</code>. Nếu tài khoản không có quyền root cần cấp quyền bằng cách chạy lệnh <code>sudo su</code>.</p>
+    <p>Chạy lệnh sau để tiến hành cài đặt:</p>
+    <code>curl -sO https://hocvps.com/install && bash install</code>
+    <div class="note">
+        <ul>
+            <li>Cài đặt xong, khi connect SSH VPS bạn hãy sử dụng port 2222, không dùng port 22!</li>
+        </ul>
+    </div>
+</body>
+</html>
