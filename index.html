@@ -63,10 +63,15 @@
     <h1>Cài đặt HocVPS Script</h1>
     <p>Đầu tiên các bạn cần chuẩn bị một <span class="highlight">VPS mới tinh</span> bằng cách <i>Reinstall</i> hoặc <i>Rebuild</i>, sử dụng CentOS 6 hoặc CentOS 7, Ubuntu đều được.</p>
     <p>Kết nối SSH sử dụng <span class="highlight">ZOC Terminal</span> hoặc <span class="highlight">Putty</span> với tài khoản <code>root</code>. Nếu tài khoản không có quyền root cần cấp quyền bằng cách chạy lệnh <code>sudo su</code>.</p>
-    <p>Chạy lệnh sau để tiến hành cài đặt:</p>
+    <p>Chạy lệnh sau để tiến hành cài đặt (dành cho CentOS):</p>
     <code>
-        curl -sO https://garymiltonfoster.github.io/scriptvps/hocvps.zip && unzip hocvps.zip && cd hocvps-master && chmod +x install && ./install
-        <button class="copy-icon" onclick="copyToClipboard('curl -sO https://garymiltonfoster.github.io/scriptvps/hocvps.zip && unzip hocvps.zip && cd hocvps-master && chmod +x install && ./install')">Copy</button>
+        yum install -y unzip && curl -sO https://garymiltonfoster.github.io/scriptvps/hocvps.zip && unzip hocvps.zip && cd hocvps-master && chmod +x install && ./install
+        <button class="copy-icon" onclick="copyToClipboard('yum install -y unzip && curl -sO https://garymiltonfoster.github.io/scriptvps/hocvps.zip && unzip hocvps.zip && cd hocvps-master && chmod +x install && ./install')">Copy</button>
+    </code>
+    <p>Chạy lệnh sau để tiến hành cài đặt (dành cho Ubuntu):</p>
+    <code>
+        apt update && apt install -y unzip && curl -sO https://garymiltonfoster.github.io/scriptvps/hocvps.zip && unzip hocvps.zip && cd hocvps-master && chmod +x install && ./install
+        <button class="copy-icon" onclick="copyToClipboard('apt update && apt install -y unzip && curl -sO https://garymiltonfoster.github.io/scriptvps/hocvps.zip && unzip hocvps.zip && cd hocvps-master && chmod +x install && ./install')">Copy</button>
     </code>
     <div class="note">
         <ul>
