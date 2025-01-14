@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cài đặt HocVPS Script</title>
     <style>
+        /* Áp dụng box-sizing cho tất cả các phần tử */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -21,11 +26,12 @@
             background-color: #f4f4f4;
             padding: 10px;
             border-radius: 5px;
-            position: relative;
             display: block;
             margin: 10px 0;
-            overflow-x: auto; /* Cho phép cuộn ngang */
-            white-space: pre; /* Giữ nguyên định dạng */
+            white-space: pre-wrap; /* Cho phép xuống dòng */
+            word-wrap: break-word; /* Ngắt từ dài */
+            position: relative;
+            padding-right: 60px; /* Để dành chỗ cho nút sao chép */
         }
         /* Điều chỉnh nút sao chép */
         .copy-icon {
@@ -60,6 +66,7 @@
             code {
                 padding: 8px;
                 font-size: 14px;
+                padding-right: 50px; /* Điều chỉnh padding cho nút sao chép nhỏ hơn */
             }
             .copy-icon {
                 padding: 3px 6px;
