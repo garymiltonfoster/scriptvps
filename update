@@ -1,0 +1,38 @@
+#!/bin/bash
+#######################################################
+# HocVPS Script Installer v4.0.0
+#######################################################
+
+if [ -f /etc/hocvps/scripts.conf ]; then
+    echo "========================================================================="
+    echo "Server/VPS của bạn đã được cài sẵn HocVPS Script"
+    echo "========================================================================="
+fi
+
+
+# Tải hai file vào thư mục /etc/hocvps/menu/
+echo "Đang tải các file vào /etc/hocvps/menu/..."
+curl -o /etc/hocvps/menu/them-domain https://raw.githubusercontent.com/garymiltonfoster/script-update-vps/refs/heads/main/them-domain
+
+# Kiểm tra và tạo thư mục /etc/hocvps/menu nếu chưa tồn tại
+if [ ! -d "/etc/hocvps/menu" ]; then
+    echo "Thư mục /etc/hocvps/menu không tồn tại. Đang tạo thư mục..."
+    mkdir -p /etc/hocvps/menu
+fi
+
+# Cấp quyền thực thi cho các file trong menu
+chmod +x /etc/hocvps/menu/them-domain
+
+
+# Kiểm tra xem có phải server đã cài đặt HocVPS Script hay chưa
+if [ -f /etc/hocvps/scripts.conf ]; then
+    echo "========================================================================="
+    echo "Server/VPS của bạn đã được cập nhật lên bản mới nhất"
+    echo "Hãy sử dụng lệnh 'hocvps' để truy cập menu quản lý"
+    echo "Danh sách menu mới: "
+    echo "1. Thêm domain"
+    echo "Chào tạm biệt!"
+    echo "========================================================================="
+    exit
+fi
+
