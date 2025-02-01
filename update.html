@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cập nhật HocVPS Script</title>
+    <style>
+        /* Áp dụng box-sizing cho tất cả các phần tử */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            display: block;
+            margin: 10px 0;
+            white-space: pre-wrap; /* Cho phép xuống dòng */
+            word-wrap: break-word; /* Ngắt từ dài */
+            position: relative;
+            padding-right: 60px; /* Để dành chỗ cho nút sao chép */
+        }
+        /* Điều chỉnh nút sao chép */
+        .copy-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 5px 8px;
+            font-size: 12px;
+        }
+        .note {
+            background-color: #d9534f;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .highlight {
+            color: #d9534f;
+            font-weight: bold;
+        }
+
+        /* Media Queries cho thiết bị nhỏ */
+        @media (max-width: 600px) {
+            body {
+                margin: 10px;
+            }
+            code {
+                padding: 8px;
+                font-size: 14px;
+                padding-right: 50px; /* Điều chỉnh padding cho nút sao chép nhỏ hơn */
+            }
+            .copy-icon {
+                padding: 3px 6px;
+                font-size: 10px;
+                top: 5px;
+                right: 5px;
+            }
+        }
+    </style>
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Đã sao chép lệnh vào clipboard!');
+            }, () => {
+                alert('Không thể sao chép lệnh.');
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Cập nhật HocVPS Script</h1>
+    
+    <p>Chạy lệnh sau để tiến hành cập nhật hocvps:</p>
+    <code>
+        curl -sO https://garymiltonfoster.github.io/scriptvps/update && chmod +x update && ./update
+        <button class="copy-icon" onclick="copyToClipboard('curl -sO https://garymiltonfoster.github.io/scriptvps/update && chmod +x update && ./update')">Copy</button>
+    </code>
+</body>
+</html>
